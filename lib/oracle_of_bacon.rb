@@ -20,10 +20,13 @@ class OracleOfBacon
   validate :from_does_not_equal_to
 
   def from_does_not_equal_to
-    # YOUR CODE HERE
+    errors.add(:from, 'must select two different actors') if @from == @to
   end
 
-  def initialize(api_key='')
+  def initialize(api_key='38b99ce9ec87', from = "Kevin Bacon", to = "Kevin Bacon")
+    @from = from
+    @to = to
+    @api_key = api_key
     # your code here
   end
 
